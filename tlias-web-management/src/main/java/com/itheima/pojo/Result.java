@@ -12,6 +12,11 @@ public class Result {
     private String msg; //错误信息
     private Object data; //数据
 
+    /**
+     * 返回成功结果（无数据）
+     * 
+     * @return Result 返回成功的Result对象，code为1，msg为"success"
+     */
     public static Result success() {
         Result result = new Result();
         result.code = 1;
