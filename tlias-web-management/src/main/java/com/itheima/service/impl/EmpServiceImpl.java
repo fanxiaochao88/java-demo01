@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.autoconfigure.PageHelperProperties;
 import com.itheima.mapper.EmpMapper;
 import com.itheima.pojo.Emp;
+import com.itheima.pojo.EmpQueryParam;
 import com.itheima.pojo.PageResult;
 import com.itheima.service.EmpService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class EmpServiceImpl implements EmpService {
     private final EmpMapper empMapper;
 
     @Override
-    public PageResult<Emp> page(Integer page, Integer pageSize, String name, Integer gender, LocalDate begin, LocalDate end) {
+    public PageResult<Emp> page(EmpQueryParam empQueryParam) {
 //        // 获取总数
 //        Long count = empMapper.count();
 //        // 获取分页数据
@@ -29,9 +30,9 @@ public class EmpServiceImpl implements EmpService {
 //        return new PageResult<Emp>(count, list);
 
         // 1. 设置分页参数
-        PageHelper.startPage(page, pageSize);
+        PageHelper.startPage(empQueryParam.getPage(), empQueryParam.getPageSize());
         // 2. 执行查询
-        List<Emp> list = empMapper.page(name, gender, begin, end);
+        List<Emp> list = empMapper.page(empQueryParam);
 
         Page<Emp> p = (Page<Emp>) list;
 

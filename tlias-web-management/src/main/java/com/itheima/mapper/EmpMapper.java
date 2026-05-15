@@ -1,6 +1,7 @@
 package com.itheima.mapper;
 
 import com.itheima.pojo.Emp;
+import com.itheima.pojo.EmpQueryParam;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -30,5 +31,7 @@ public interface EmpMapper {
      */
 //    @Select("select emp.*, dept.name deptName from emp left join dept on emp.dept_id = dept.id" +
 //            " order by emp.update_time desc")
-    public List<Emp> page(String name, Integer gender, LocalDate begin, LocalDate end);
+//    public List<Emp> page(String name, Integer gender, LocalDate begin, LocalDate end);
+
+    public List<Emp> page(EmpQueryParam empQueryParam);
 }
