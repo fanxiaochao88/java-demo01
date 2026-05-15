@@ -10,6 +10,7 @@ import com.itheima.service.EmpService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -18,7 +19,7 @@ public class EmpServiceImpl implements EmpService {
     private final EmpMapper empMapper;
 
     @Override
-    public PageResult<Emp> page(Integer page, Integer pageSize) {
+    public PageResult<Emp> page(Integer page, Integer pageSize, String name, Integer gender, LocalDate begin, LocalDate end) {
 //        // 获取总数
 //        Long count = empMapper.count();
 //        // 获取分页数据
@@ -30,7 +31,7 @@ public class EmpServiceImpl implements EmpService {
         // 1. 设置分页参数
         PageHelper.startPage(page, pageSize);
         // 2. 执行查询
-        List<Emp> list = empMapper.page();
+        List<Emp> list = empMapper.page(name, gender, begin, end);
 
         Page<Emp> p = (Page<Emp>) list;
 

@@ -4,6 +4,7 @@ import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public interface EmpMapper {
     /**
      * pageHelper分页
      */
-    @Select("select emp.*, dept.name deptName from emp left join dept on emp.dept_id = dept.id" +
-            " order by emp.update_time desc")
-    public List<Emp> page();
+//    @Select("select emp.*, dept.name deptName from emp left join dept on emp.dept_id = dept.id" +
+//            " order by emp.update_time desc")
+    public List<Emp> page(String name, Integer gender, LocalDate begin, LocalDate end);
 }

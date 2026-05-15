@@ -3,5 +3,6 @@
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/mapper/DeptMapper.java" value="b999deb5-eb5f-4e41-b245-086bf079c6d0" />
     <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/mapper/EmpMapper.java" value="aedd122a-7897-463c-aed2-810c6e4486a0" />
+    <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/com/itheima/mapper/EmpMapper.xml" value="b999deb5-eb5f-4e41-b245-086bf079c6d0" />
   </component>
 </project>
